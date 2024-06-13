@@ -32,6 +32,7 @@ while True:
 	game.spaceship_group.sprite.lasers_group.draw(screen)
 	for obstacle in game.obstacles:
 		obstacle.blocks_groups.draw(screen)
+	game.aliens_group.draw(screen)
 
 	pygame.display.update()
 	clock.tick(60)

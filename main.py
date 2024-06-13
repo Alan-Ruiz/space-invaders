@@ -33,6 +33,7 @@ while True:
 	for obstacle in game.obstacles:
 		obstacle.blocks_groups.draw(screen)
 	game.aliens_group.draw(screen)
+	game.move_aliens()
 
 	pygame.display.update()
 	clock.tick(60)

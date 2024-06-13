@@ -1,4 +1,5 @@
 import pygame, sys
+from spaceship import Spaceship
 
 pygame.init()
 
@@ -12,6 +13,10 @@ pygame.display.set_caption("Python Space Invaders")
 
 clock = pygame.time.Clock()
 
+spaceship = Spaceship()
+spaceship_group = pygame.sprite.GroupSingle()
+spaceship_group.add(spaceship)
+
 while True:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -20,6 +25,7 @@ while True:
 
 	#Drawing 
 	# screen.fill(GREY)
+	spaceship_group.draw(screen)
 	
 	pygame.display.update()
 	clock.tick(60)

@@ -24,6 +24,9 @@ class Game:
         self.score = 0
         self.highscore = 0
         self.load_highscore()
+        self.explosion_sound = pygame.mixer.Sound("Sounds/explosion.ogg")
+        pygame.mixer.music.load("Sounds/music.ogg")
+        pygame.mixer.music.play(-1)
 
     def create_obstacles(self):
         obstacle_width = len(grid[0]) * 3 
@@ -86,6 +89,7 @@ class Game:
                 
                 aliens_hit = pygame.sprite.spritecollide(laser_sprite, self.aliens_group, True)
                 if aliens_hit:
+                    self.explosion_sound.play()
                     for alien in aliens_hit:
                         self.score += alien.type * 100
                         self.check_for_highscore()
@@ -93,6 +97,7 @@ class Game:
 
                 if pygame.sprite.spritecollide(laser_sprite, self.mystery_ship_group, True):
                     self.score += 500
+                    self.explosion_sound.play()
                     self.check_for_highscore()
                     laser_sprite.kill()
                 for obstacle in self.obstacles:

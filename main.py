@@ -16,6 +16,8 @@ level_surface = font.render("LEVEL 01", False, YELLOW)
 game_over_surface = font.render("GAME OVER", False, YELLOW)
 score_text_surface = font.render("Score", False, YELLOW)
 highscore_text_surface = font.render("HIGH-SCORE", False, YELLOW)
+highscore_text_surface = font.render("HIGH-SCORE", False, YELLOW)
+highscore_text_surface = font.render("HIGH-SCORE", False, YELLOW)
 
 screen = pygame.display.set_mode((SCREEN_WIDTH + OFFSET, SCREEN_HEIGHT + 2*OFFSET))
 pygame.display.set_caption("Python Space Invaders")
